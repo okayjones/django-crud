@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>List</h1>
-
+<h1>Snacks</h1>
 <ul>
     {% for snack in object_list %}
     <li>
@@ -10,5 +9,6 @@
     </li>
     {% endfor %}
 </ul>
+<a class="btn btn-primary" href="/create" role="button">Add Snack</a>
 
 {% endblock content %}
