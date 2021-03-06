@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 class Snack(models.Model):
     name = models.CharField(max_length=64)
-    pruchaser = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    purchaser = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     description = models.CharField(max_length=200, default = 'Enter Description')
 
     def __str__(self):
