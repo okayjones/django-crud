@@ -19,7 +19,9 @@ class SnackCreateView(CreateView):
     template_name = 'snack-create.html'
     model = Snack
     fields = ['name', 'description', 'purchaser']
-    success_url = reverse_lazy('snack_list')
+
+    def get_success_url(self):
+        return reverse('snack_detail', kwargs={'pk': self.object.pk})
 
 
 class SnackDeleteView(DeleteView):
@@ -34,4 +36,4 @@ class SnackUpdateView(UpdateView):
     fields = ['name', 'description', 'purchaser']
 
     def get_success_url(self):
-        return reverse('snack_detail', kwargs={'pk': self.kwargs['pk']})
+        return reverse('snack_detail', kwargs={'pk': self.object.pk})
