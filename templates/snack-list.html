@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Snacks</h1>
+<div class="list-group">
+    {% for snack in object_list %}
+    <a href="{% url 'snack_detail' snack.id %}" class="list-group-item list-group-item-action">{{ snack.name }}</a>
+    {% endfor %}
+    <a class="btn btn-primary w-100 mb-5" href="/create" role="button">Add Snack</a>
+</div>
+
+
+
+{% endblock content %}
